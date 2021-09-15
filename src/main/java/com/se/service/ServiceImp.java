@@ -15,8 +15,29 @@ public class ServiceImp implements ServiceInterface {
     EmployeeRepo employeeRepo;
 
     @Override
-    @Transactional
-    public List<Employee> findAll() {
+    public List<Employee> findAllEmployee() {
         return employeeRepo.findAll();
+    }
+
+    @Override
+    public Employee getEmployee(long id) {
+
+        return employeeRepo.findEmployeeById(id);
+    }
+
+    @Override
+    public void deleteEmployee(long id) {
+
+        employeeRepo.deleteById(id);
+    }
+
+    @Override
+    public void editEmployee(long id) {
+
+    }
+
+    @Override
+    public Employee saveEmployee(Employee employee) {
+        return employeeRepo.save(employee);
     }
 }

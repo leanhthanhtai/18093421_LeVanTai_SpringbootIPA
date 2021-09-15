@@ -7,5 +7,9 @@ import java.util.List;
 
 @Service
 public interface ServiceInterface {
-    public List<Employee> findAll();
+    public List<Employee> findAllEmployee();
+    public Employee getEmployee(long id);
+    public void deleteEmployee(long id);
+    public void editEmployee(long id);
+    public Employee saveEmployee(Employee employee);
 }
